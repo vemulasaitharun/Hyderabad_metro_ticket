@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .ticket {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #000;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ticket-logo {
+            width: 80px;
+            margin: 10px auto;
+        }
+
+        .ticket-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px; /* Added margin to separate the title from the lines */
+        }
+
+        .ticket-content {
+            font-size: 14px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .locations {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .locations p {
+            margin: 0; /* Remove margin */
+            width: 48%; /* Adjust the width as needed */
+            
+        }
+
+        .ticket-barcode {
+            width: 50%; /* Adjusted width for the QR code */
+            margin-top: 10px; /* Added margin to separate the QR code from the content */
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            margin: 10px 0; /* Added margin for better spacing */
+        }
+
+        .thank-you {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="divider"></div>
+        <div class="ticket-header">
+            Hyderabad Metro
+        </div>
+        <div class="divider"></div>
+        <div class="ticket-content">
+            <div class="locations">
+                <p><strong>Date:</strong></p>
+                <p>January 1, 2023</p>
+            </div>
+            <div class="locations">
+                <p><strong>Departure Time:</strong></p>
+                <p>10:00 AM</p>
+            </div>
+            <div class="locations">
+                <p><strong>From:</strong></p>
+                <p id="from2">LB Nagar</p>
+            </div>
+            <div class="locations" >
+                <p><strong>To:</strong></p>
+                <p id="to2">Uppal</p>
+            </div>
+            <div class="locations">
+                <p><strong>Reference Number:</strong></p>
+                <p>HYD9874433</p>
+            </div>
+            <div class="locations">
+                <p><strong>Price:</strong></p>
+                <p id="cost">00</p>
+            </div>
+        </div>
+        <img src="qr.png" alt="Barcode" class="ticket-barcode">
+        <div class="thank-you">
+            Thank you for choosing Hyderabad Metro!
+        </div>
+    </div>
+    <script  >
+        document.getElementById("from2").innerHTML=localStorage.getItem("from3");
+        document.getElementById("to2").innerHTML=localStorage.getItem("to3");
+        document.getElementById("cost").innerHTML=localStorage.getItem("cost1");
+
+
+    </script>
+</body>
+</html>
